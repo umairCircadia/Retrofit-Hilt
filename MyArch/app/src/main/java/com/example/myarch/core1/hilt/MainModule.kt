@@ -1,4 +1,4 @@
-package com.example.myarch.hilt
+package com.example.myarch.core1.hilt
 
 import com.example.myarch.core1.network.ApiServices
 import com.example.myarch.core1.network.PosterApiService

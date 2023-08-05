@@ -1,4 +1,4 @@
-package com.circadia.cpro_2.core
+package com.example.myarch.core1.network
 
 sealed interface NetworkResult<T : Any> {
     class Success<T : Any>(val data: T) : NetworkResult<T>

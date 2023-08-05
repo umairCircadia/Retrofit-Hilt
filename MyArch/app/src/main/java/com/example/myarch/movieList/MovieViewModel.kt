@@ -1,12 +1,12 @@
 package com.example.myarch.movieList
 
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.circadia.cpro_2.core.NetworkResult
+import com.example.myarch.core1.network.NetworkResult
 import com.example.myarch.core1.model.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -23,7 +23,7 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
 
 
     fun getPopularMovies() {
-        viewModelScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             when (val response = repository.getMoviesList()) {
                 is NetworkResult.Success -> {
                     _movieLiveData.emit(response.data.results)
