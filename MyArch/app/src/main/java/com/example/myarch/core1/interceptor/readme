@@ -1,4 +1,5 @@
 //Reference
+https://square.github.io/okhttp/features/interceptors/
 https://amitshekhar.me/blog/okhttp-interceptor
 
 //some theory
@@ -9,5 +10,5 @@ see theory.png
 - from every interceptor you can write logic for request and response handling
 - when request will precess, 1st request's code will execute from all interceptors then response's code.
 - for request A -> B -> C
-- for response C -> B -> A
+- for response C -> B -> A --- see theory.png
 
